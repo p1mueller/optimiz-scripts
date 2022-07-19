@@ -47,7 +47,7 @@ def main():
             pl.Math(data=["A =", Matrix(A), ", b =", Matrix(b), ", c =", Matrix(c)])
         )
         with doc.create(pl.Figure(position="h")) as fig:
-            fig.add_image(img_file, width=pl.NoEscape(r"\linewidth"))
+            fig.add_image(str(Path(img_file).relative_to(FOLDER)), width=pl.NoEscape(r"\linewidth"))
 
     simplex(A, b, c, s, doc=doc, precision=precision)
 
